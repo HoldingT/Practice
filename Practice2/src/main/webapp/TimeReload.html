@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Time Reload</title>
+<script>
+	var t=new Date();
+	document.write(t.getHours()+":"+t.getMinutes()+":"+t.getSeconds());
+	setInterval(function(){
+		location.reload();
+	},1000);
+</script>
+</head>
+<body>
+
+</body>
+</html>
