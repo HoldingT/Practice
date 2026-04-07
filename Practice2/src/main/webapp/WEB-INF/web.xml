@@ -49,4 +49,14 @@
     <servlet-name>PServlet</servlet-name>
     <url-pattern>/PServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>FlowServlet</display-name>
+    <servlet-name>FlowServlet</servlet-name>
+    <servlet-class>core.FlowServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FlowServlet</servlet-name>
+    <url-pattern>/FlowServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
