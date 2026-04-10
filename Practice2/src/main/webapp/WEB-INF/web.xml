@@ -59,4 +59,14 @@
     <servlet-name>FlowServlet</servlet-name>
     <url-pattern>/FlowServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberLocalServlet</display-name>
+    <servlet-name>MemberLocalServlet</servlet-name>
+    <servlet-class>core.MemberLocalServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberLocalServlet</servlet-name>
+    <url-pattern>/MemberLocalServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
