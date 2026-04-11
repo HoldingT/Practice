@@ -79,4 +79,14 @@
     <servlet-name>RequestInfoServlet</servlet-name>
     <url-pattern>/RequestInfoServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResponseServlet</display-name>
+    <servlet-name>ResponseServlet</servlet-name>
+    <servlet-class>core.ResponseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResponseServlet</servlet-name>
+    <url-pattern>/ResponseServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
