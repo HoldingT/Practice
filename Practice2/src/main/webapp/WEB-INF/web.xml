@@ -69,4 +69,14 @@
     <servlet-name>MemberLocalServlet</servlet-name>
     <url-pattern>/MemberLocalServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RequestInfoServlet</display-name>
+    <servlet-name>RequestInfoServlet</servlet-name>
+    <servlet-class>core.RequestInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RequestInfoServlet</servlet-name>
+    <url-pattern>/RequestInfoServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
