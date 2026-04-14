@@ -99,4 +99,14 @@
     <servlet-name>QueryServlet</servlet-name>
     <url-pattern>/QueryServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LottoServlet</display-name>
+    <servlet-name>LottoServlet</servlet-name>
+    <servlet-class>core.LottoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LottoServlet</servlet-name>
+    <url-pattern>/LottoServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
