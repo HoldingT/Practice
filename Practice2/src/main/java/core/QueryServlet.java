@@ -26,5 +26,10 @@ public class QueryServlet extends HttpServlet {
 		out.print("<a href = '"+request.getHeader("referer")+"'> 입력화면으로가기</a>");
 		out.close();
 	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		doGet(request, response);
+	}
 
 }
