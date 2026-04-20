@@ -13,7 +13,6 @@ public class MemberLocalServlet extends HttpServlet {
 	int member_v = 0;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
 		int local_v = 0;
