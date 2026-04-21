@@ -109,4 +109,14 @@
     <servlet-name>LottoServlet</servlet-name>
     <url-pattern>/LottoServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PartTestServlet</display-name>
+    <servlet-name>PartTestServlet</servlet-name>
+    <servlet-class>core.PartTestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PartTestServlet</servlet-name>
+    <url-pattern>/PartTestServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
