@@ -129,4 +129,14 @@
     <servlet-name>UploadServlet</servlet-name>
     <url-pattern>/UploadServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionTestServlet</display-name>
+    <servlet-name>SessionTestServlet</servlet-name>
+    <servlet-class>core.SessionTestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionTestServlet</servlet-name>
+    <url-pattern>/SessionTestServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
