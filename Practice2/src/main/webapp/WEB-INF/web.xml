@@ -139,4 +139,14 @@
     <servlet-name>SessionTestServlet</servlet-name>
     <url-pattern>/SessionTestServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CountServlet</display-name>
+    <servlet-name>CountServlet</servlet-name>
+    <servlet-class>core.CountServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CountServlet</servlet-name>
+    <url-pattern>/CountServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
