@@ -149,4 +149,14 @@
     <servlet-name>CountServlet</servlet-name>
     <url-pattern>/CountServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LottoServletLimit</display-name>
+    <servlet-name>LottoServletLimit</servlet-name>
+    <servlet-class>core.LottoServletLimit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LottoServletLimit</servlet-name>
+    <url-pattern>/LottoServletLimit</url-pattern>
+  </servlet-mapping>
 </web-app>
