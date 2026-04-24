@@ -159,4 +159,24 @@
     <servlet-name>LottoServletLimit</servlet-name>
     <url-pattern>/LottoServletLimit</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>forwardSevlet</display-name>
+    <servlet-name>forwardSevlet</servlet-name>
+    <servlet-class>core.forwardSevlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>forwardSevlet</servlet-name>
+    <url-pattern>/forwardSevlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>RedirectServlet</display-name>
+    <servlet-name>RedirectServlet</servlet-name>
+    <servlet-class>core.RedirectServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RedirectServlet</servlet-name>
+    <url-pattern>/RedirectServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
