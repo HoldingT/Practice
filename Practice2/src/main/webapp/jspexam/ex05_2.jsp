@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>템플릿 콘텐츠 예제</title>
 </head>
 <body>
-	<h2>첫 번째 JSP 테스트 예제</h2>
-	<hr>오늘 날짜 : <%=java.time.LocalDate.now() %>
+	<h3> Hello Guest! 방문 시간 : 1시 20분 30초 </h3>
 </body>
 </html>
