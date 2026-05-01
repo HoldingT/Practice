@@ -1,25 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import = "java.time.*", java.util.Date" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>JSP 학습</title>
+	<title>ContentType & Import</title>
 </head>
 <body>
-	<%-- JSP 주석 태그 <%= java.time.LocalTime.now()%> --%>
-	<h2>JSP의 멤버변수와 지역변수</h2>
+	<h2>JSP의 page 지시자 태그 예제(1)</h2>
 	<hr>
-	<%! int member_v = 0; //멤버변수 선언%> <%-- 선언문태그 --%>
-	<% int local_v = 0; /*지역변수 선언*/ %> <%-- 수행문태그 --%>
-	<%
-	member_v++;
-	local_v++;
-	%>
-	<h3>member_v : <%= member_v %></h3>
-	<h3>local_v : <%= local_v %></h3>
-	<%--
-	<h3>이부분은 출력되지 않아요 : <%= local_v+member_v %></h3>
-	 --%>
+	<h2><%= new Date() %></h2>
+	<h2><%= LocalDate.now() %></h2>
+	<h2><%= LocalTime.now() %></h2>
 </body>
 </html>
