@@ -4,11 +4,11 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>관리자 화면</title>
+	<title>유저 화면</title>
 </head>
 <body>
-	관리자님 환영합니다. <br>
-	전달된 파라미터 : <span style="color:blue;">
+	사용자님 환영합니다. <br>
+	전달된 파라미터 : <span style="color:red;">
 	<%= request.getParameter("message") %></span>
 </body>
 </html>
