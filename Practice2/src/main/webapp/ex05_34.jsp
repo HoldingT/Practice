@@ -13,38 +13,26 @@
 	<h2>&lt; c:forEach&gt; &lt; c:forTokens&gt; 태그</h2>
 	<hr>
 	<h3>[ 맵 ]</h3>
-	<c:if test="true"> 
-		무조건 수행<br>
-	</c:if>
+	<c:set var="map" value="<%= new java.util.HashMap<String, String>() %>" />
+	<c:set target="${map}" property="st1" var="듀크" />
+	<c:set target="${map}" property="st2" var="둘리" />
+	<c:set target="${map}" property="st3" var="또치" />
 	
-	<c:if test="${empty param.name and empty param.age }"> 
-		<h3>name=xxx&amp; age=xxx 의 형식으로 Query 문자열을 전달하세요..</h3>
-	</c:if>
+	<c:forEach var="data" items="${map}">
+		[ ${data.key} = ${data.value} ]
+	</c:forEach>
 	
-	<c:if test="${empty param.name and empty param.age }"> 
-		<c:if test="${param.name == 'duke' }">
-			name 파라미터의 값이 ${param.name}입니다.<br>
-		</c:if>
-		<c:if test="${param.age >= 30 }"> 
-			당신의 나이는 30세 이상입니다.
-		</c:if>
-		<c:if test="${param.age < 30 }"> 
-			당신의 나이는 30세 미만입니다.
-		</c:if>
-		<hr>
-		<ul>
-			<c:choose>
-				<c:when test="${param.name == 'duke'}" >
-					<li> 당신의 이름은 ${param.name} 입니다.
-				</c:when>
-				<c:when test="${param.name >= 30}" >
-					<li> 당신은 30세 이상입니다.
-				</c:when>
-				<c:otherwise>
-					<li> 당신은 'duke'도 아니고 30세 이상도 아닙니다.
-				</c:otherwise>
-			</c:choose>
-		</ul>
-	</c:if>
+	<h3>[ 배열 ]</h3>
+	<c:set var="intArray" value="<%= new int[]{ %>{map}">
+		[ ${data.key} = ${data.value} ]
+	</c:forEach>
+	
+	<c:set var="color" value="green-session" scope="session"/>
+	<c:set var="color" value="yellow-application" scope="application"/>
+	color = ${color} <br>
+	pageScope.color = ${pageScope.color}<br>
+	requestScope.color = ${requestScope.color}<br>
+	sessionScope.color = ${sessionScope.color}<br>
+	applicationScope.color = ${applicationScope.color}<br>
 </body>
 </html>
