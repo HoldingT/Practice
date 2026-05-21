@@ -23,16 +23,27 @@
 	</c:forEach>
 	
 	<h3>[ 배열 ]</h3>
-	<c:set var="intArray" value="<%= new int[]{ %>{map}">
-		[ ${data.key} = ${data.value} ]
+	<c:set var="intArray" value="<%= new int[]{1,2,3,4,5} %>" />
+	<c:forEach var="i" items="${intArray}" begin="2" end="4" >
+		[${i}]
 	</c:forEach>
 	
-	<c:set var="color" value="green-session" scope="session"/>
-	<c:set var="color" value="yellow-application" scope="application"/>
-	color = ${color} <br>
-	pageScope.color = ${pageScope.color}<br>
-	requestScope.color = ${requestScope.color}<br>
-	sessionScope.color = ${sessionScope.color}<br>
-	applicationScope.color = ${applicationScope.color}<br>
+	<h3>[ 값은 변화시키면서 반복처리 ]</h3>
+	<c:set var="sum" value="0" />
+	<c:forEach var="i" begin="1" end="100" step="2" >
+		<c:set var="sum" value="${sum + i}" />
+	</c:forEach>
+	<h4>결과 = ${sum}</h4>
+	
+	<h4>구구단 : 4단</h4>
+	<c:forEach var="i" begin="1" end="9" >
+		4 * ${i} = ${4*i}&nbsp;&nbsp;
+	</c:forEach>
+	<hr>
+	콤마와 점을 구분자로 사용:<br>
+	<c:forTokens var="token" >
+		items="빨강색, 주황색, 노란색, 초록색, 파랑색, 남색, 보라색" delims=",.">
+		<button>${token}</button>
+	</c:forTokens>
 </body>
 </html>
