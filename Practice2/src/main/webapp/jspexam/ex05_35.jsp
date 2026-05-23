@@ -7,43 +7,31 @@
 <head>
 	<meta charset="UTF-8">
 	<title>JSTL 테스트</title>
+	<style>
+	div#one{
+		background-color : yellow;
+	}
+	div#tow{
+		background-color : pink;
+	}
+	</style>
 </head>
 <body>
-	>
-	<h2>&lt; c:forEach&gt; &lt; c:forTokens&gt; 태그</h2>
-	<hr>
-	<h3>[ 맵 ]</h3>
-	<c:set var="map" value="<%= new java.util.HashMap<String, String>() %>" />
-	<c:set target="${map}" property="st1" var="듀크" />
-	<c:set target="${map}" property="st2" var="둘리" />
-	<c:set target="${map}" property="st3" var="또치" />
-	
-	<c:forEach var="data" items="${map}">
-		[ ${data.key} = ${data.value} ]
-	</c:forEach>
-	
-	<h3>[ 배열 ]</h3>
-	<c:set var="intArray" value="<%= new int[]{1,2,3,4,5} %>" />
-	<c:forEach var="i" items="${intArray}" begin="2" end="4" >
-		[${i}]
-	</c:forEach>
-	
-	<h3>[ 값은 변화시키면서 반복처리 ]</h3>
-	<c:set var="sum" value="0" />
-	<c:forEach var="i" begin="1" end="100" step="2" >
-		<c:set var="sum" value="${sum + i}" />
-	</c:forEach>
-	<h4>결과 = ${sum}</h4>
-	
-	<h4>구구단 : 4단</h4>
-	<c:forEach var="i" begin="1" end="9" >
-		4 * ${i} = ${4*i}&nbsp;&nbsp;
-	</c:forEach>
-	<hr>
-	콤마와 점을 구분자로 사용:<br>
-	<c:forTokens var="token" >
-		items="빨강색, 주황색, 노란색, 초록색, 파랑색, 남색, 보라색" delims=",.">
-		<button>${token}</button>
-	</c:forTokens>
+	<c:url var="urlheader" value="header.jsp">
+		<c:param name="id" value="UNICO" />
+	</c:url>
+	<h3>&lt;c:url&gt; 과 &lt;c:param&gt; 태그의 처리 결과 : ${urlheader}
+	</h3>
+	<c:import url="${urlheader}" var="head" />
+	<c:import url="http://www.w3.org/" var="urlEx"/>
+	<c:import var="weather" url="http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1168064000">
+	</c:import>
+	<div id="one">
+	${head}
+	</div>
+	<div id="two">
+	${weather}
+	</div>
+	${urlEx}
 </body>
 </html>
