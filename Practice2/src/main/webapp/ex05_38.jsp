@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 
 <!DOCTYPE html>
 <html>
@@ -38,6 +38,19 @@
 		<hr>
 		
 		<x:if select="$xdata//학생[@번호='st0004']" >
+			번호가 st0004 번인 학생 이름 : <x:out select = "$xdata//학생[@번호='st0004']/이름" /><br>
+		</x:if>
+		<x:choose>
+			<x:when select="$xdata//학생[@번호='st0005']">
+			번호가 st0004 번인 학생 이름 : <x:out select = "$xdata//학생[@번호='st0004']/이름" /><br>
+			</x:when>
+			<x:otherwise>
+				<h3>번호가 st0005인 학생 데이터가 존재하지 않습니다!!</h3>
+			</x:otherwise>
+		</x:choose>
 	</c:catch>
+	<c:if test="${ex != null }">
+		<h3>${ex}</h3>
+	</c:if>
 </body>
 </html>
