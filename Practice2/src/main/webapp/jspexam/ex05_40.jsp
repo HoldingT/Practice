@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>JSTL 테스트</title>
+	<style>
+	table, td, th{
+		border : 1px solid black;
+	}
+	</style>
+</head>
+<body>
+	<c:choose>
+		<c:when test="${pageContext.request.method == 'GET' }" >
+			<h2>점검하려는 버스의 번호를 입력하세요</h2>
+			<hr>
+			<form method = "POST" action ="/deu/jspexam/ex05_40.jsp">
+				버스번호 : <input type="number" name="num" min="0" required>
+				<input type = "submit" value = "알아보기">
+			</form>
+		</c:when>
+		<c:otherwise>
+			<h2>${param.num }번 버스의 정보</h2>
+			<hr>
+			<c:catch var="ex">
+				<c:import var = "xmldata"
+					url="http://ws.bus.go.kr/api/rest/busRouteInfo/getBusRouteList?serviceKey=인증키&strSrch=${param.num }" />
+				<x:parse xml = "${xmldata }" varDom="xdata" />
+				<x:if select="$xdata/headerCd = 0">
+					<c:set var = "busnum" value = "${param.num }" />
+					<x:forEach select = "$xdata//itemList">
+						<x:if select = "busRouteNm = $busnum">
+							버스번호 : <x:out select="busRouteNm" /><br>
+							기점 : <x:out select="stStationNm" /><br>
+							종점 : <x:out select="edStationNm" /><br>
+							라우트아이디 : <x:out select="busRouteId " /><br>
+ /</body>
+</html>
